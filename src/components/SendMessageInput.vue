@@ -7,6 +7,12 @@
          name="message" 
          placeholder="Send Message!"
          v-model="message"
+         @keydown="(e) => {
+            if(e.key === 'Enter') {
+               emit('sendMessage', message)
+               message = ''
+            }
+         }"
          >
          <button 
          class="btn btn-success btn-lg"

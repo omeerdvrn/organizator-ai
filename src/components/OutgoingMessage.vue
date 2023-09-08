@@ -22,12 +22,13 @@ img{
    float:right;
    display: inline-flex;
    margin-right: 8%;
+   max-width: 80%;
 }
 .outgoing-message-box{
    /* simple message box */
    padding: 1%;
    border: 2px solid;
-   background-color: rgb(215, 213, 132); /* Border image with a purple gradient */
+   background-color: rgb(132, 169, 215); /* Border image with a purple gradient */
    border-radius: 20px;
    box-shadow: 1 1 1 1;
    text-align:center;

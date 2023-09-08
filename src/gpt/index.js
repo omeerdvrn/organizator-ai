@@ -4,7 +4,7 @@ import OpenAI from 'openai';
 import { ORGANIZER_PROMPT } from './prompts.js'
 
 const openai = new OpenAI({
-  apiKey: import.meta.env.VITE_API_KEY, // This is also the default, can be omitted
+  apiKey: import.meta.env.VITE_API_KEY,
   dangerouslyAllowBrowser: true
 });
 let sentMessages = []

@@ -38,6 +38,7 @@ const sendUserMessage = async (message)=>{
 .chat-bg{
    background-color: black;
    height: 70vh;
+   overflow-y: auto;
    width: 60%;
 }
 .shiny-border {
