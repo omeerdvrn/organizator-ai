@@ -6,11 +6,20 @@
       name="message" 
       placeholder="Send Message!"
       v-model="message"
+      @keydown="(e) => {
+            if(e.key === 'Enter') {
+               emit('sendFirstMessage', message)
+               message = ''
+            }
+         }"
       >
       <button 
       class="btn btn-success btn-lg"
       type="button"
-      @click="emit('sendFirstMessage', message)"
+      @click="() => {
+         emit('sendFirstMessage', message)
+         message = ''
+         }"
       >
       Send
       </button>

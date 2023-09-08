@@ -4,7 +4,7 @@ import OpenAI from 'openai';
 import { ORGANIZER_PROMPT } from './prompts.js'
 
 const openai = new OpenAI({
-  apiKey: import.meta.env.VITE_API_KEY, // This is also the default, can be omitted
+  apiKey: import.meta.env.VITE_API_KEY,
   dangerouslyAllowBrowser: true
 });
 let sentMessages = []
@@ -19,7 +19,6 @@ const sendMessage = async (message) => {
       messages: sentMessages,
    });
    const { choices: responseMessages } = chatCompletion
-   console.log(responseMessages[0].message.content);
    sentMessages.push({"role": "assistant", "content": responseMessages[0].message.content})
    return responseMessages[0].message.content
 }
