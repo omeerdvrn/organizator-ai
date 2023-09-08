@@ -6,15 +6,22 @@
       <br>
       <OutgoingMessage message="siktir"></OutgoingMessage>
    </div>
+
+   <div class="container mt-6">
+      <SendMessageInput @send-message="emit(sendMessage)"/>
+   </div>
 </template>
 <script setup>
 import { ref } from 'vue';
 import IncomingMessage from '../components/IncomingMessage.vue';
 import OutgoingMessage from '../components/OutgoingMessage.vue';
+import SendMessageInput from '../components/SendMessageInput.vue';
 import { useFirstAnswerStore } from '../stores/firstAnswer'
 
 const firstAnswerStore = useFirstAnswerStore()
 const msg = ref(firstAnswerStore.firstAnswer)
+
+const emit = defineEmits(['sendMessage'])
 </script>
 
 <style scoped>
@@ -22,7 +29,6 @@ const msg = ref(firstAnswerStore.firstAnswer)
    background-color: black;
    height: 70vh;
    width: 60%;
-   margin-bottom: 15%
 }
 .shiny-border {
   border: 2px solid transparent;
