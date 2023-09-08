@@ -19,7 +19,6 @@ const sendMessage = async (message) => {
       messages: sentMessages,
    });
    const { choices: responseMessages } = chatCompletion
-   console.log(responseMessages[0].message.content);
    sentMessages.push({"role": "assistant", "content": responseMessages[0].message.content})
    return responseMessages[0].message.content
 }

@@ -17,7 +17,10 @@
          <button 
          class="btn btn-success btn-lg"
          type="button"
-         @click="emit('sendMessage', message)"
+         @click="() => {
+            emit('sendMessage', message)
+            message = ''
+            }"
          >
          Send
       </button>

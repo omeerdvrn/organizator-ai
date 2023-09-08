@@ -2,7 +2,7 @@
 
    <h1 style="color: white">Chat:</h1>
    <div class="container col-md-6 chat-bg shiny-border">
-      <div v-for="msg of messages">
+      <div v-for="msg of messages" >
          <IncomingMessage v-if="msg.role === 'assistant'" :message="msg.message"></IncomingMessage>
          <br>
          <OutgoingMessage v-if="msg.role === 'user'" :message="msg.message"></OutgoingMessage>
@@ -28,7 +28,6 @@ const messages = ref([{"role": "assistant", "message": msg.value}])
 
 const sendUserMessage = async (message)=>{
    messages.value.push({ "role": "user", "message": message })
-   console.log("Mesaj gonderiliyor: ", message)
    const answer = await sendMessage(message)
    messages.value.push({ "role": "assistant", "message": answer })
 }
