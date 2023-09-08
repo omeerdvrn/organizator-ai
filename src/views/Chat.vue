@@ -1,4 +1,6 @@
 <template>
+
+   <h1 style="color: white">Chat:</h1>
    <div class="container col-md-6 chat-bg shiny-border">
       <IncomingMessage :message="msg"></IncomingMessage>
       <br>
